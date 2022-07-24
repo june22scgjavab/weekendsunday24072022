@@ -1,0 +1,501 @@
+Q 1. What will happen when you attempt to compile and run this code?
+abstract class Base{
+        abstract public void myfunc();
+        public void another(){
+        System.out.println(""Another method"");
+        }
+}
+
+public class Abs extends Base{
+        public static void main(String argv[]){
+        Abs a = new Abs();
+        a.amethod();
+        }
+        public void myfunc(){
+                System.out.println(""My Func"");
+                } 
+        public void amethod(){
+        myfunc();      
+        }
+}"
+
+a) The code will compile and run, printing out the words "My Func"	
+b) The compiler will complain that the Base class has non abstract methods	
+c) The code will compile but complain at run time that the Base class has non abstract methods	
+d) The compiler will complain that the method myfunc in the base class has no body, nobody at all to print it
+
+ANS A
+
+----------------------------------------------------------------------------------------------------------------
+Q 2. class A, B and C are in multilevel inheritance hierarchy repectively . 
+In the main method of some other class if class C object is created, in what sequence the three constructors execute?
+
+a) Constructor of A executes first, followed by the constructor of B and C	
+b)Constructor of C executes first followed by the constructor of A and B	
+c)Constructor of C executes first followed by the constructor of B and A	
+d)Constructor of A executes first followed by the constructor of C and B
+
+ANS A
+------------------------------------------------------------------------------------------------------------------------
+Q 3. Consider the following code and choose the correct option:
+package aj; 
+private class S{ 
+int roll;
+ S(){roll=1;} 
+}
+
+package aj; 
+class T 
+{
+    public static void main(String ar[]){ 
+   System.out.print(new S().roll);
+}
+}
+
+a) Compilation error	
+b)Compiles and display 1	
+c)Compiles but no output	
+d) Compiles and diplay 0
+
+ANS A
+----------------------------------------------------------------------------------------------------------------------------------------
+Q 4.Here is the general syntax for method definition: 
+
+accessModifier returnType methodName( parameterList )
+{
+  Java statements
+
+  return returnValue;
+}
+
+
+What is true for the returnType and the returnValue?
+
+
+A) The returnValue can be any type, but will be automatically converted to returnType when the method returns to the caller	
+B) If the returnType is void then the returnValue can be any type	
+C) The returnValue must be the same type as the returnType, or be of a type that can be converted to returnType without loss of information	
+D) The returnValue must be exactly the same type as the returnType.
+
+ans C
+--------------------------------------------------------------------------------------------------------------------------------------
+Q 5. A) A call to instance method can not be made from static context.
+     B) A call to static method can  be  made from non static context.
+
+A)Both are FALSE	
+B)Both are TRUE	
+C)Only A is TRUE	
+D)Only B is TRUE
+------------------------------------------------------------------------------------------------------------------------------------
+Q 6
+"Consider the following code and choose the correct option:
+class A{ A(){System.out.print("From A");}}
+class B extends A{ B(int z){z=2;}
+public static void main(String args[]){
+  new B(3);}}
+
+A)Compilation error	
+B)Comiples and prints From A	
+C)Compiles but throws runtime exception	
+D)Compiles and display 3
+
+ANS B
+----------------------------------------------------------------------------------------------------------------------------------------
+Q 7. 
+class Sample
+{int a,b;
+Sample()
+{ a=1; b=2;
+System.out.println(a+"\t"+b);
+}
+Sample(int x)
+{ this(10,20);
+a=b=x;
+System.out.println(a+"\t"+b);
+}
+Sample(int a,int b)
+{ this();
+this.a=a;
+this.b=b;
+System.out.println(a+"\t"+b);
+}
+}
+class This2
+{ public static void main(String args[])
+{
+Sample s1=new Sample (100);
+}
+}
+What is the Output of the Program?
+a)100 100 1 2 10 20	
+b)1 2 100 100 10 20	
+c)10 20 1 2 100 100	
+d)1 2 10 20 100 100
+
+ANS d)
+-------------------------------------------------------------------------------------------------------------------------------
+Q 8
+Consider the following code and choose the correct option:
+package aj; class A{ protected int j; }
+package bj; class B extends A
+{ public static void main(String ar[]){ 
+System.out.print(new A().j=23);}}
+A)code compiles fine and will display 23	
+B)code compiles but will not display output	
+C)compliation error	
+D)j can not be initialized
+
+ANS C)
+---------------------------------------------------------------------------------------------------------------------------------------------
+Q 9. Consider the following code and choose the correct option:
+class A{  int z; A(int x){z=x;} }
+class B extends A{ 
+public static void main(String arg){
+new B();}}	
+A)Compilation error	
+B)Compiles but throws run time exception	
+C)ompiles and displays nothing	
+D)None of the listed options
+
+ANS A)
+--------------------------------------------------------------------------------------------------------------------------------------------
+Q 10
+class Test{
+static void method(){
+this.display();
+}
+static display(){
+System.out.println((""hello"");
+}
+public static void main(String[] args){
+new Test().method();
+}
+}
+consider the code above & select the proper output from the options."	
+A)hello	
+B)Runtime Error	
+C)compiles but no output	
+D)does not compile
+
+ANS D)
+----------------------------------------------------------------------------------------------------------------------------------------
+Q 11
+"public class MyClass {
+  static void print(String s, int i) {
+    System.out.println("String: " + s + ", int: "+ i);
+  }
+
+  static void print(int i, String s) {
+    System.out.println("int: " + i + ", String: " + s);
+  }
+
+  public static void main(String[] args) {
+    print("String first", 11);
+    print(99, "Int first");
+  }
+}
+What would be the output?
+A)String: String first, int: 11 int: 99, String: Int first	
+B)int: 27, String: Int first String: String first, int: 27	
+C)Compilation Error	
+D)Runtime Exception
+
+ANS A)
+--------------------------------------------------------------------------------------------------------------------------------
+Q 12
+A) No argument constructor is provided to all Java classes by default
+B) No argument constructor is provided to the class only when no constructor is defined.
+C) Constructor can have another class object as an argument
+D) Access specifiers are not applicable to Constructor
+
+A)Only A is TRUE	
+B)All are TRUE	
+C)B and C is TRUE	
+D)All are FALSE
+
+ANS C)
+-------------------------------------------------------------------------------------------------------------------------------
+
+Q 13
+Consider the following code and choose the correct option:
+class Test{ private static void display(){
+System.out.println("Display()");}
+private static  void show() { display();
+System.out.println("show()");}
+public static void main(String arg[]){
+show();}}
+
+A)Compiles and prints show()	
+B)Compiles and prints Display() show()	
+C)Compiles but throws runtime exception	
+D)Compilation error
+
+ANS B)
+-------------------------------------------------------------------------------------------------------------------------------------
+Q 14
+Which of the following sentences is true?
+A)  Access to data member depends on the scope of the class and the scope of data members
+B) Access to data member depends only on the scope of the data members
+C) Access to data member depends on the scope of the method from where it is accessed
+
+A)Only A and C is TRUE	
+b)All are TRUE	
+c)All are FALSE	
+d)Only A is TRUE
+
+ANS d
+-----------------------------------------------------------------------------------------------------------------------------
+
+Q 15
+Which of the following will print -4.0
+A)System.out.println(Math.ceil(-4.7));	
+B)System.out.println(Math.floor(-4.7));	
+C)System.out.println(Math.round(-4.7));	
+D)System.out.println(Math.min(-4.7));
+
+ANS A)
+----------------------------------------------------------------------------------------------------------------------
+Q 16
+Suppose class B is sub class of class A:
+A) If class A doesn't have any constructor, then class B also must not have any constructor
+B) If class A has parameterized constructor, then class B can have default as well as  parameterized constructor
+C) If class A has parameterized constructor then call to class A constructor should be made explicitly by constructor of class B
+
+
+a)Only B and C is TRUE	
+b)Only A is TRUE	
+c)All are FALSE	
+d)Only A and C is TRUE
+
+ANS a
+--------------------------------------------------------------------------------------------------------------------------
+Q 17
+Consider the following code and choose the correct option:
+class A{ private void display(){ System.out.print(""Hi"");}
+public static void main(String ar[]){
+display();}}
+
+a)Compiles but doesn't display anything	
+b)Compiles and throws run time exception	
+c)Compilation fails	
+d)Compiles and displays Hi
+
+ans c
+------------------------------------------------------------------------------------------------------------------------------------
+
+Q 18
+
+package QB;
+ class Sphere {
+             protected int methodRadius(int r) {
+      System.out.println("Radious is: "+r);
+   return 0;
+    }
+   }
+package QB;
+public class MyClass {
+ public static void main(String[] args) {
+ double x = 0.89;
+  Sphere sp = new Sphere();
+  // Some code missing
+}
+} 
+
+to get the radius value what is the code of line to be added ?
+
+A)methodRadius(x);	
+B)sp.methodRadius(x);	
+C)Nothing to add	
+D)Sphere.methodRadius();
+B)
+-----------------------------------------------------------------------------------------------------------------------
+Q 19
+
+class One{
+int var1;
+One (int x){
+var1 = x;
+}
+}
+class Derived extends One{
+int var2;
+void display(){
+System.out.println("var 1="+var1+"var2="+var2);
+}
+}
+class Main{
+public static void main(String[] args){
+Derived obj = new Derived();
+obj.display();
+}}
+Consider the code above & select the proper output from the options.
+
+
+A) 0 , 0	
+B)compiles successfully but runtime error	
+C)compile error	
+D)none of these
+
+ANS C)
+-------------------------------------------------------------------------------------------------------------------------
+Q 20
+Consider the following code and choose the correct option:
+class Test{ private void display(){
+System.out.println("Display()");}
+private static  void show() { display();
+System.out.println("show()");}
+public static void main(String arg[]){
+show();}}
+
+A)Compiles and prints show()	
+B)Compiles and prints Display() show()	
+C)Compiles but throws runtime exception	
+D)Compilation error
+
+ANS D)
+---------------------------------------------------------------------------------------------------------------------------
+Q 21
+Consider the following code and choose the best option:
+class Super{ int x; Super(){x=2;}}
+class Sub extends Super { void displayX(){
+System.out.print(x);}
+public static void main(String args[]){
+   new Sub().displayX();}}
+
+A)Compilation error	
+B)Compiles and runs without any output	
+C)Compiles and display 2	
+D)Compiles and display 0
+
+ANS C)
+----------------------------------------------------------------------------------------------------------------------------------
+
+Q 22
+class One{
+int var1;
+One (int x){
+var1 = x;
+}}
+class Derived extends One{
+int var2;
+Derived(){
+super(10);
+var2=10;
+}
+void display(){
+System.out.println("var1="+var1+" , var2="+var2);
+}}
+class Main{
+public static void main(String[] args){
+Derived obj = new Derived();
+obj.display();
+}}
+consider the code above & select the proper output from the options.
+
+
+A)var1=10 , var2=10	
+B)0,0	
+C)compile error	
+D)runtime error
+
+ANS A)
+-----------------------------------------------------------------------------------------------------------------------------------
+Q 23
+
+What will be printed out if you attempt to compile and run the following code ? 
+public class AA {
+ public static void main(String[] args) {
+  int i = 9;
+  switch (i) {
+  default:
+   System.out.println(""default"");
+  case 0:
+   System.out.println(""zero"");
+   break;
+  case 1:
+   System.out.println(""one"");
+  case 2:
+   System.out.println(""two"");
+  }
+ }
+}
+
+
+A)Compilation Error	
+B)default	
+C)default zero	
+D)default zero one two
+
+ANS C)
+-----------------------------------------------------------------------------------------------------------------------------------------
+Q 24
+package QB;
+
+class Meal {
+  Meal() {
+    System.out.println("Meal()");
+  }
+}
+class Cheese {
+  Cheese() {
+    System.out.println("Cheese()");
+  }
+}
+
+class Lunch extends Meal {
+  Lunch() {
+    System.out.println("Lunch()");
+  }
+}
+class PortableLunch extends Lunch {
+  PortableLunch() {
+    System.out.println("PortableLunch()");
+  }
+}
+class Sandwich extends PortableLunch {
+    private Cheese c = new Cheese();
+
+  public Sandwich() {
+    System.out.println(""Sandwich()");
+  }
+}
+public class MyClass7 {
+  public static void main(String[] args) {
+    new Sandwich();
+  }
+} What would be the output?
+
+A)Meal() Lunch() PortableLunch() Cheese() Sandwich()	
+B)Meal() Cheese() Lunch() PortableLunch() Sandwich()	
+C)Meal() Lunch() PortableLunch() Sandwich() Cheese()	
+D)Cheese() Sandwich() Meal() Lunch() PortableLunch()
+
+ANS A)
+--------------------------------------------------------------------------------------------------------------------------------
+
+Q 25
+
+Consider the following code and choose the correct option:
+class A{ int a; A(int a){a=4;}}
+class B extends A{ B(){super(3);} void displayA(){
+System.out.print(a);}
+public static void main(String args[]){
+  new B().displayA();}}
+
+A)compiles and display 0	
+B)compilation error	
+C)Compiles and display 4	
+D)Compiles and display 3
+
+ANS A)
+--------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
